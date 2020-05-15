@@ -174,6 +174,17 @@ In order to best make certain decisions when authoring 3D Models, one must have 
     \* File size recommendations will change as new texture compression formats such as glTF Universal Textures using the KTX2 container and geometry compression using Draco, with higher compression, become the new mainstream standard.  To learn more about [<ins>KTX2</ins>][link-id-ktx2] and [<ins>Draco</ins>][link-id-draco].
 
 
+* Web for Desktop and Mobile AR (for a single item)
+    * File Size = Ideally less than 5MB for glTF/ GLB/ USDZ*
+    * Triangle Count = 100k or less
+    * Textures = power of 2 textures, square not required; 1k or 2k albedo (include alpha channel if  transparency required) /ORM/normal/emissive[**](#footnote-001)
+    * Draw calls = fewer the better (e.g. consolidate meshes, fewer use of total materials to increase asset performance)
+
+    **Note**: \
+    \* File size recommendations will change as new texture compression formats such as glTF Universal Textures using the KTX2 container and geometry compression using Draco, with higher compression, become the new mainstream standard.  To learn more about [<ins>KTX2</ins>][link-id-ktx2] and [<ins>Draco</ins>][link-id-draco].
+
+    <a name="footnote-001"></a>** test herser
+
 
 [link-id-001]:./detail-version/FileFormatsAndAssetStructure.md
 [link-id-002]:./detail-version/CoordinateSystemandScaleUnit.md

@@ -151,7 +151,7 @@ Textures are often the cause of large files sizes which can increase load time a
 
 When using lights in a real-time rendered scene it is best to use Image-based lighting (IBL) to confirm accuracy but not to use dynamic lighting (i.e. Direct, Spot, and Point lights) in an asset. Oftentimes, 3D content creators will use a single ambient color light to light a scene, but we recommend against illuminating a scene in this way. Ambient lights are not physically based, and in general we recommend using a consistent Image based lighting setup to test the accuracy of your models, materials and textures. **The final model export should not include any lighting set up**.
 
-* **Image-based Lighting (IBL)** is a panoramic environment image, used for both specular reflections (glossy surfaces) and soft diffuse lighting (rough surfaces). IBLs can be created from panoramic high-dynamic range photography or rendered from a computer graphics scene. Click here to link to the standard [<ins>Khronos sample GLTF viewer</ins>][link-id-gltfviewer]. Link [<ins>here</ins>](https://www.google.com) with common IBLs.
+* **Image-based Lighting (IBL)** is a panoramic environment image, used for both specular reflections (glossy surfaces) and soft diffuse lighting (rough surfaces). IBLs can be created from panoramic high-dynamic range photography or rendered from a computer graphics scene. Link here to the standard [<ins>Khronos sample GLTF viewer</ins>][link-id-gltfviewer].
 * **Emissive Mapping** - usually do not cast light onto other surfaces.  Emissive maps are used to make surfaces glow, as if they are lit internally. Emissive maps usually do not cast light onto other surfaces and can be a texture or just a solid color value.
 * **Baking Lighting/Shadow** - We recommend not baking lighting as it doesn’t support a PBR workflow.
 
@@ -167,23 +167,13 @@ In order to best make certain decisions when authoring 3D Models, one must have 
 * Web for Desktop and Mobile AR (for a single item)
     * File Size = Ideally less than 5MB for glTF/ GLB/ USDZ*
     * Triangle Count = 100k or less
-    * Textures = power of 2 textures, square not required; 2k albedo/transparency; 1k ORM/normal/emissive
+    * Textures = power of 2 textures, square not required; 1k or 2k albedo (include alpha channel if  transparency required) / ORM / normal** / emissive
     * Draw calls = fewer the better (e.g. consolidate meshes, fewer use of total materials to increase asset performance)
 
     **Note**: \
     \* File size recommendations will change as new texture compression formats such as glTF Universal Textures using the KTX2 container and geometry compression using Draco, with higher compression, become the new mainstream standard.  To learn more about [<ins>KTX2</ins>][link-id-ktx2] and [<ins>Draco</ins>][link-id-draco].
 
-
-* Web for Desktop and Mobile AR (for a single item)
-    * File Size = Ideally less than 5MB for glTF/ GLB/ USDZ*
-    * Triangle Count = 100k or less
-    * Textures = power of 2 textures, square not required; 1k or 2k albedo (include alpha channel if  transparency required) /ORM/normal/emissive[**](#footnote-001)
-    * Draw calls = fewer the better (e.g. consolidate meshes, fewer use of total materials to increase asset performance)
-
-    **Note**: \
-    \* File size recommendations will change as new texture compression formats such as glTF Universal Textures using the KTX2 container and geometry compression using Draco, with higher compression, become the new mainstream standard.  To learn more about [<ins>KTX2</ins>][link-id-ktx2] and [<ins>Draco</ins>][link-id-draco].
-
-    <a name="footnote-001"></a>** test herser
+    \** Recommend using 2k for the normal map. We found there are more problems with down res-ed normals than any other map (including albedo). We found using JPG for the normal map tends to have severe artifacts, same as 1K PNG normal map.
 
 
 [link-id-001]:./detail-version/FileFormatsAndAssetStructure.md

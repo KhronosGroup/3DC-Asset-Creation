@@ -7,7 +7,10 @@
 </header> 
 
 *Version 1.0.0*\
-Last Updated: May 15, 2020
+Last Updated: May 21, 2020
+
+This work is licensed under a XYZ license. Copyright ©The Khronos® Group Inc. 2020.
+
 
 <header> 
     <h2>Content</h2> 

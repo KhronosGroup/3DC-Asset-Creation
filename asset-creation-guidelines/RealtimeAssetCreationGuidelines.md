@@ -57,7 +57,7 @@ For building your 3D product models, it is important to set up content correctly
 * We recommend producing content with the smallest file size possible, to reduce download time and create smoother guest experience. See the section of  publishing targets.
 * Most assets should be placed so the center bottom is at world `0,0,0`. For animated and other assets, some pivots need to be placed for movement consideration. 
 * Use valid character sets for asset and file naming: `a-z`, `_`, `-`, `0–9`. 
-    * Start names with a lowercase letter, avoid numeric or capital letters.
+    * For naming convention, start the first character with alphabet letters only.
     * Use underscore `_` or hyphen `-` to separate different words.
 
 <header> 

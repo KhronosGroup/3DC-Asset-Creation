@@ -1,22 +1,30 @@
-<p align="center">
-  <img width="460" src="https://www.khronos.org/assets/images/api_logos/3dcommerce.svg">
-</p>
+<!--
+Copyright 2020 The Khronos Group Inc.
 
-<header> 
-    <h1>Real-time Asset Creation Guidelines</h1> 
-</header> 
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+![](https://www.khronos.org/assets/images/api_logos/3dcommerce.svg)
+
+# Real-time Asset Creation Guidelines
 
 *Version 1.0.0*\
-Last Updated: May 21, 2020
+Last Updated: July 28, 2020
 
-This work is licensed under a XYZ license. Copyright ©The Khronos® Group Inc. 2020.
+<!-- Start License -->
 
+[![CC4](https://licensebuttons.net/l/by/3.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
 
-<header> 
-    <h2>Content</h2> 
-</header>
+This work is licensed under a CC BY 4.0 license.
+
+Copyright 2020 The Khronos® Group Inc.
+
+<!-- End License -->
+
+## Content
 
 Real-time Asset Creation Guidelines Summary
+
 * [Executive summary](#executive-summary)
 * [File Formats and Asset Structure Summary](#file-formats-and-asset-structure-summary)
 * [Coordinate Systems and Scale Summary](#coordinate-systems-and-scale-summary)
@@ -28,159 +36,151 @@ Real-time Asset Creation Guidelines Summary
 * [Publishing Targets Summary](#publishing-targets-summary)
 
 
-<header>
-    <h2>Asset Creation Guidelines Summary</h2>
-</header>
+## Asset Creation Guidelines Summary
 
-<header>
-    <h3>Executive Summary</h3>
-</header>
-<hr>
+### Executive summary
 
-These guidelines are intended for 3D artists who are already familiar with polygonal 3D workflows but who may not be familiar with web/mobile delivery. For true-geometry CAD, additional CAD-to-polygon workflow will be required.
+* * *
 
-These are guidelines and best practices that explain the modeling standards that a 3D model needs to meet, on behalf of a merchant for real-time rendering. This document highlights some common tips to achieve high-quality, efficient and performant content. The generated content supports experiences in augmented reality (AR), virtual reality (VR), product configurators, and web-based 3d marketing tools optimized for real-time. These guidelines are designed to be DCC-agnostic (Digital Content Creation software) as the principles should be applicable across 3D software. For different industry-vertical and software specific workflows, please refer to the Asset Creation Workflows (Links available soon). 
+The goal of these guidelines is to enable artists to streamline the creation of 3D assets that can be easily and reliably used by merchants for real-time rendering on multiple delivery platforms.
 
-The goal of the guidelines is to reduce the number of iterations between content creator and merchant and streamline the content creation process.
+This summary is a preview of an upcoming full set of guidelines that will contain many more details, together with example 3D asset creation workflows using popular 3D tools. This summary has been released to enable feedback and suggestions from the industry to guide and help improve the content of the full guidelines.
 
+These guidelines are primarily intended for 3D artists who are familiar with polygonal 3D workflows but who may not be familiar with creating assets for 3D web/mobile delivery. They contain best practices and modeling standards for high-quality, efficient 3D assets that will be performant in augmented reality (AR) and virtual reality (VR) experiences, product configurators, and interactive web-based 3D marketing tools. 
 
-<header> 
-    <h3>File Formats and Asset Structure Summary</h3>
-</header>
-<hr>
+We've designed the guidelines to be DCC (Digital Content Creation) tool agnostic as the principles should be applicable to any 3D asset creation software. Selected industry-vertical and software specific workflows, including creating 3D assets from true-geometry CAD models will be covered by upcoming Asset Creation Workflows in the full version of the guidelines.
 
-<ins>Link to full version</ins> (Coming soon) 
+### File Formats and Asset Structure Summary
 
-For building your 3D product models, it is important to set up content correctly with file formats and structures taken into consideration.  Below are some best practices for setting up your 3D environments to ensure that your project is off to a good start.
-
-* We recommend exporting final models in glTF or binary GLB format, and USDZ for iOS devices. Even though the guidelines are glTF centric, USDZ is covered as part of the holistic ecosystem consideration. Note that some glTF features are not compatible nor translatable to USDZ.
-* We recommend producing content with the smallest file size possible, to reduce download time and create smoother guest experience. See the section of  publishing targets.
-* Most assets should be placed so the center bottom is at world `0,0,0`. For animated and other assets, some pivots need to be placed for movement consideration. 
-* Use valid character sets for asset and file naming: `a-z`, `_`, `-`, `0–9`. 
-    * For naming convention, start the first character with alphabet letters only.
-    * Use underscore `_` or hyphen `-` to separate different words.
-
-<header> 
-    <h3>Coordinate Systems and Scale Summary</h3> 
-</header>
-<hr>
-
-<ins>Link to full version</ins> (Coming soon)
-
-Different 3D DCC software comes with varied coordinate systems and measurement units. It is important to understand the differences between modeling coordinates and normal vector coordinates.
-
-* For **modeling coordinates**, both glTF and USDZ use the right-handed coordinate system, with `+Y` as world up, and the front of the asset facing `+Z`. Positive rotation is counterclockwise.
-* For **normal vector coordinates**, glTF and USDZ use OpenGL conventions where `+X` is right, `+Y` is up, and `+Z` points toward the viewer
-* Scale: use 1 unit as 1 meter when possible. If you use non meter-based units, applying appropriate multipliers would be necessary. Eg. 1 inch = 0.0254 meter
-
-<header> 
-    <h3>Geometry Summary</h3> 
-</header>
-<hr>
-
-<ins>Link to full version</ins> (Coming soon) 
-
-Ideally, it is best to design 3D models with high accuracy and quality, which can be tailored for product rendering, and later optimized as real-time assets for real-time experiences. To function on the web and on mobile devices, it is important that your model loads quickly and is highly optimized with the following characteristics.
-
-* The model should look identical to the reference photos and built to real-world scale.  
-* The model should only have as much geometry as necessary to keep a high level of realism. Additional details can be baked onto normal maps. See publishing target for triangle count details. 
-* Avoid nGons when possible. We recommend using quads (4-sided mesh) for your source models and leaving triangulation for the final step in the modeling optimization process. Be sure to keep your non-triangulated mesh to make future revisions to the model more easily. 
-* Avoid single vertex points that have a large number of edges connected to them when possible (i.e. high valence vertices, 10+ edged connected to a single point).
-* Make sure there are no shading errors on the model. Shading errors are a sign that something has gone wrong with the model, such as two faces overlapping or normals need to be recalculated.
-* Smooth edges or bevels can bring smooth edge transitions that are more realistic and aesthetically pleasing. A common practice is to add extra polygon edge loops, or use normal maps to achieve similar effect.
-* There should not be any obvious holes, unintentional visible gaps, or non-manifold geometry in the model.
-* For opaque and transparent components, use separate meshes and materials for better rendering results.
-* Clear transform data, construction history data, and any modifier stacks to avoid future discrepancies.
-
-<header> 
-    <h3>UV Coordinates Summary</h3> 
-</header>
-<hr>
-
-<ins>Link to full version</ins> (Coming soon)
-
-UV layout / UV mapping is a process by which an artist takes their 3D model and creates flattened 2D representations of its various surfaces so that texture maps can be accurately projected onto it. This resulting 2D representation is considered an unwrapped UV Map.  In order for a model to be effective for web and mobile experiences it should have fully unwrapped UVs for all parts. Below are some best practices for creating UV maps for real-time rendering purposes. Some exceptions may apply to UVs built for Ambient Occlusion.
-
-* Ideally, the UV shells for the model are mapped onto a single texture map. Sometimes using multiple textures may be required to keep reasonable quality.
-* UVs are in the atlased layout and all the UV shells are positioned within 0-1 space.  
-* Fill as much of the UV space as possible, reduce wasted empty areas, ideally without shattered UV shells.
-* Make sure that detailed pieces, like zippers and logos, are easy to see and not blurry by making them larger on the UV map, ensuring they have more resolution.
-* All the UV shells should be normalized in scale so that texture density is even across the entire model except where extra detail is needed (e.g. logos, zippers)
-* Ideally, none of the UV shells should overlap. 
-* UV seams should be placed on natural breaks within the real world version of the model or hidden in non visible areas. Visible seams can be jarring and break the realistic appearance of a model.
-* Artists should endeavor to eliminate visible texture stretching or warping
-
-<header> 
-    <h3>Materials Summary</h3> 
-</header>
-<hr>
-
-<ins>Link to full version</ins> (Coming soon)
-
-When creating materials with real time usage in mind you should use as few textures as possible to keep your file size low.  Typically materials make up a larger percentage of the model file size than geometry. To achieve this it is recommended that textures are exported using a physically-based rendering (PBR) workflow. PBR materials allow for a wide range of surface types, are easy to use and understand, keeps file sizes smaller for downloads, and uses less memory when rendering.
-
-* PBR materials in Metallic-Roughness format.
-* Semitransparent or Alpha Test materials parts should always use a separate material from opaque parts. Where transparency can be realized without requiring any texture, recommend use a separate, untextured material instead.
-* No texture blending or layering. In each characteristic of a material use only one texture.
-* When appropriate try to limit the number of materials that you use.
-
-<header> 
-    <h3>Textures Summary</h3> 
-</header>
-<hr>
-
-<ins>Link to full version</ins> (Coming soon)
-
-Textures are often the cause of large files sizes which can increase load time and make the overall customer experience slow and frustrating. To optimize the user experience follow these basic suggestions.
-
-* Use sRGB color space for albedo and emissive, use linear color space for all other textures.
-* Texture types:
-  * **Albedo**: if a transparency texture is needed, use the alpha channel of albedo.
-  * **ORM** (combined map for Ambient Occlusion, Roughness, Metallic): Single bitmap with ambient occlusion in red channel, roughness in green channel, metalness in blue channel.
-  * **Normal** bump: Tangent-space normal maps for glTF and USDZ, use OpenGL coordinates, with red right, green up.
-  * **Emissive**
-* Use JPG textures as much as possible for albedo (without transparency) and emissive.
-* If JPG artifacts are too extreme, use PNG texture format. 
-* Use a PNG for albedo when a material requires transparency. Transparency texture is always stored in albedo alpha channel.
-* Textures should be as small as possible without losing detail. See publishing target section below for target sizing. 
+* * *
 
 
-<header> 
-    <h3>Lighting Summary</h3> 
-</header>
-<hr>
+When building 3D assets, it is important to export the final product models into widely recognized file formats and to structure data within those files using common conventions. 
 
-<ins>Link to full version</ins> (Coming soon)
+glTF is a royalty-free, open standard file format for 3D assets that is widely adopted by 3D authoring tools and viewers on diverse platforms. glTF enables asset materials to use Physically Based Rendering (PBR) for realistic visual product representations. glTF assets are represented as .gltf files with referenced textures & geometry, or binary .glb files that embed the textures directly instead of referencing them as external images.
 
-When using lights in a real-time rendered scene it is best to use Image-based lighting (IBL) to confirm accuracy but not to use dynamic lighting (i.e. Direct, Spot, and Point lights) in an asset. Oftentimes, 3D content creators will use a single ambient color light to light a scene, but we recommend against illuminating a scene in this way. Ambient lights are not physically based, and in general we recommend using a consistent Image based lighting setup to test the accuracy of your models, materials and textures. **The final model export should not include any lighting set up**.
+iOS devices do not natively support glTF but use Apple's proprietary USDz format. glTF and USDz have similar capabilities but some glTF features are not supported by USDz. We will cover the differences in the full version of the Real-time Asset Creation Guidelines.
 
-* **Image-based Lighting (IBL)** is a panoramic environment image, used for both specular reflections (glossy surfaces) and soft diffuse lighting (rough surfaces). IBLs can be created from panoramic high-dynamic range photography or rendered from a computer graphics scene. Link here to the standard [<ins>Khronos sample GLTF viewer</ins>][link-id-gltfviewer].
-* **Emissive Mapping** - usually do not cast light onto other surfaces.  Emissive maps are used to make surfaces glow, as if they are lit internally. Emissive maps usually do not cast light onto other surfaces and can be a texture or just a solid color value.
-* **Baking Lighting/Shadow** - We recommend not baking lighting as it doesn’t support a PBR workflow.
+To support these differences we recommend using the Publishing Targets workflow. Using this system a Source Asset is created with the highest quality content in PBR format. This asset can then be decimated/simplified into different targets, to support a variety of viewers, each supporting different material features. For example, glTF supports the use of an Emissive value or texture, whereas USDz only supports an Emissive texture. 
 
-<header> 
-    <h3>Publishing Targets Summary</h3> 
-</header>
-<hr>
+* Publishing Targets should be created with the smallest file size that does not unacceptably degrade visual quality, to reduce download time and provide a smoother guest experience. See Publishing Targets Summary section.
+* Most assets should be placed so the center bottom is at world coordinate 0,0,0.
+* Articulated assets should have specific pivot placement to direct movement and animation.
+* Common characters should be used when naming asset files: a-z, _, -, 0–9.
+* Start the file name with a letter as the first character.
+* Use underscore _ or hyphen - to separate words within a file name, rather than blanks.
 
-<ins>Link to full version</ins> (Coming soon)
+### Coordinate Systems and Scale Summary
 
-In order to best make certain decisions when authoring 3D Models, one must have an idea about the intended hardware and software where assets will ultimately be rendered for consumer visualization. Visual fidelity must be balanced with real-time performance and tested on the desired rendering platform. While the output target should be based on object design and complexity, the following list specifies general guidelines for common publishing targets, aiming at the lowest common denominators.
+* * *
 
-* Web for Desktop and Mobile AR (for a single item)
-    * File Size = Ideally less than 5MB for glTF/ GLB/ USDZ*
-    * Triangle Count = 100k or less
-    * Textures = power of 2 textures, square not required; 1k or 2k albedo (include alpha channel if  transparency required) / ORM / normal** / emissive
-    * Draw calls = fewer the better (e.g. consolidate meshes, fewer use of total materials to increase asset performance)
 
-    **Note**: \
-    \* File size recommendations will change as new texture compression formats such as glTF Universal Textures using the KTX2 container and geometry compression using Draco, with higher compression, become the new mainstream standard.  To learn more about [<ins>KTX2</ins>][link-id-ktx2] and [<ins>Draco</ins>][link-id-draco].
+DCC 3D asset authoring tools use a variety of internal coordinate systems and measurement units. It is important to understand the differences between modeling coordinates and normal vector coordinates.
 
-    \** Recommend using 2k for the normal map. We found there are more problems with down res-ed normals than any other map (including albedo). We found using JPG for the normal map tends to have severe artifacts, same as 1K PNG normal map.
+* Modeling coordinates: both glTF and USDz use the right-handed coordinate system, with `+Y` as world up, and the front of the asset facing `+Z`. Positive rotation is counterclockwise.
+* Normal vector coordinates: glTF and USDz use OpenGL conventions where `+X` is right, `+Y` is up, and `+Z` points toward the viewer. glTF supports mikktspace tangent space.
+* Scale: use 1 unit as 1 meter when possible. If you use non meter-based units, applying appropriate multipliers will be necessary. E.g. 1 inch = 0.0254 meters.
 
+### Geometry Summary
+
+* * *
+
+
+It is recommended to design 3D assets with high accuracy geometry, which can be used for high quality product renderings, and later distill that geometry into smaller assets optimized for real-time deployment. To deliver compelling experiences on the web and on mobile devices, delivery-ready assets should be optimized for quick loading using the following techniques:
+
+* The asset should be visually identical to the reference photos and built to real-world scale.  
+* The asset should use the minimum amount of geometry to achieve visual realism. Small surface geometric details should be baked into normal maps whenever possible. See Publishing Target Summary section for triangle count guidance for different platforms. 
+* Avoid nGons when possible. Quads (4-sided mesh) are recommended for source models, using triangulation only for final asset optimization. Be sure to keep non-triangulated meshes on hand for authoring future revisions to the model. 
+* Avoid single vertex points that have a large number of edges connected to them (i.e. high valence vertices with 10+ edges connected to a single point).
+* Make sure there are no shading errors on the asset which are indicative of an asset problem, such as two faces overlapping or vertex normals needing to be recalculated.
+* Smooth edges or bevels can refine edge transitions for increased realism in an aesthetically pleasing way. A common practice is to add extra edge loops or to use normal maps to achieve similar effects.
+* There should not be any obvious holes, unintentional visible gaps, or non-manifold geometry in the asset.
+* For better rendering results with assets that have transparent components, use separate meshes and materials for transparent vs. opaque parts.
+* Reset any transform data, construction history, and modifier stacks to avoid export discrepancies.
+
+### UV Coordinates Summary
+
+* * *
+
+An asset optimized for web and mobile experiences should have fully unwrapped UVs for all parts. High quality UVs are required to create convincing real-time assets that faithfully represent real-world products.
+
+* UV layouts can be tiled or atlased, depending on the asset. When surface details must be unique an atlas layout is best. However if surfaces use repetitive patterns then tiling textures are better.
+* UV seams should be placed on natural breaks of the real-world asset, or hidden in less-visible areas.
+* Use contiguous UV elements as much as possible, minimize small UV shells, and endevour to reduce visible texture stretching or warping.
+* Tiled UVs should use Real-World Scale (RWS) and be normalized to ensure an even texture density. However, detailed asset components such as zippers or logos may use larger UVs to maintain sufficient resolution and avoid blurriness.
+* Tiled UVs require an additional set of non-tiled UVs in atlas layout, for an ambient occlusion texture.
+* UV atlas layouts should have all UVs positioned within the 0-1 space, avoid overlapping, and minimize wasted empty areas.
+
+### Materials Summary
+
+* * *
+
+
+Typically textures and materials make up a larger percentage of an asset file size than geometry. Materials optimized for visually realistic real-time rendering should use a physically-based rendering (PBR) workflow. PBR materials help minimize file sizes, enable a wide range of surface types, are easy to use and understand, and use less memory when rendering. Recommended guidelines for real-time-optimized materials include:
+
+* Use PBR materials in Metallic-Roughness format.
+* Use the minimum the number of materials necessary for sufficient visual asset realism.
+* Semi-transparent parts of the asset should use a separate material from any opaque parts, and the meshes should be separated as well.
+* Each characteristic of a material should use no more than one texture, and should not use blending nor layering.
+* Use values instead of textures whenever a texture would be a solid single value, as this can significantly reduce file sizes.
+
+### Textures Summary
+
+* * *
+
+
+Use high quality texture assets when creating the high-resolution Source Asset. We recommend saving the Source textures in PNG format rather than compressed JPG format. Textures can then be down-sampled into PNG or JPG formats and different resolutions to support different publishing targets, which may require differing file sizes and material features.
+
+PBR texture types include:
+
+* Base Color  controls the colors you see when a surface is evenly lit, without reflection in the way. In a PBR Metalness-Roughness material, the Base Color stores reflection color for metals (gold, copper, brass, etc.). When the surface is non-metal, Base Color is used for traditional non-reflective diffuse texture (wood, brick, fabric, etc.).
+* Alpha Coverage is used for transparent details, and is always stored in the alpha channel of the Base Color texture. Alpha Coverage represents the overall visibility of the surface; unlike glass or liquids it dims all surface details including reflections. Typical uses include surfaces with many small gaps such as wicker or burlap. Glass can be represented (imperfectly) by forcing 30% opacity; this will be replaced in the near future with proper transmission and refraction via new glTF extensions.
+* ORM is a combination texture for storing Ambient **O**cclusion in the red channel, **R**oughness in the green channel, and **M**etalness in the blue channel.
+* Ambient occlusion is used for soft shadows wherever model intersections and crevices occur. For best results, use a raytraced renderer to precalculate occlusion and store this in an Occlusion texture. This is best accomplished when the model and material are near completion, so all the details can affect the occlusion calculations. 
+* Roughness defines the micro-surface (small) bumpiness, which essentially controls how blurry or sharp reflections will be.
+* Metalness controls which parts of a surface are considered metallic or not. Metallic surfaces reflect light very differently from non-metals. Metalness has a large effect on the final color and reflectivity of the surface, as well as informing what color and texture should be stored in Base Color and Roughness.
+* Normal bump is used for macro-surface (large) bumpiness. Normal adds variation in surface direction to simulate grooves, pits, fibers, etc. Normal can be used to store the curvature from a higher-detail model, allowing a lower-resolution model to look like it has more smoothness or detail.
+* Emissive can be used for internal lighting, glow-in-the-dark paint, LED displays, etc. For best results, use a raytraced renderer to precalculate emissive light bounces and store this in an Emissive texture. This is best accomplished when the model and material are near completion, so all the details can affect the emissive calculations. 
+
+Recommended guidelines for real-time textures include:
+
+* Use sRGB color space for Base Color and Emissive textures, use Linear color space for all other texture types.
+* Tangent-space normal maps for glTF and USDz should use the OpenGL convention (red right, green up) and the mikktspace tangent space.
+* When a material requires transparency, use PNG for the Base Color and store the Alpha Coverage in the alpha channel.
+* Down-sampled textures for publishing targets should be as small as possible without degrading visual details. Use JPG textures as much as possible for Base Color (without transparency) and Emissive. If JPG artifacts are too extreme, use PNG textures. See Publishing Target Summary section below for format and resolution recommendations. 
+
+
+### Lighting Summary
+
+* * *
+
+
+Common types of lighting techniques include:
+* Image-based Lighting (IBL) uses a panoramic environment image, used for both specular reflections (glossy surfaces) and soft diffuse lighting (rough surfaces). IBL textures can be created from panoramic high-dynamic range photography or rendered from a computer graphics scene. The [<ins>Khronos sample glTF viewer</ins>][link-id-gltfviewer] can use IBL.
+* Emissive is used to make surfaces glow, as if they are lit internally. Emissive maps usually do not cast light onto other surfaces and can be a texture or just a solid color value.
+
+Recommended guidelines for real-time-optimized lighting include:
+* The final exported 3D asset should not include any lighting, including no dynamic lighting (i.e. Direct, Spot, or Point lights)
+* Do not use baked lighting for product assets as the technique doesn’t support dynamic lighting or a PBR workflow.
+* Do not use a single ambient color light to light a scene during authoring, as Ambient lights are not physically based.
+* Use a consistent Image Based Lighting setup to test and confirm the accuracy of your models, materials and textures.
+
+### Publishing Targets Summary
+    
+* * *
+
+We recommend creating a Source Asset with the highest quality content in PBR format, using high-resolution geometry  and textures. This asset can be used as a "single source of truth" which is then decimated/simplified into different targets, to support a variety of viewers, each supporting different material features.
+
+To optimize design decisions when creating real-time 3D assets, it is vital to understand the capabilities and limitations and of the target delivery platforms. Visual fidelity must be balanced with real-time performance - which must be tested on-device. The following are general 'lowest common denominator' guidelines for desktop Web and mobile AR platforms.
+
+For each publishing target:
+* File Size: Ideally less than 5MB. Note that as glTF geometry and texture compression extensions, such as glTF Universal Textures using the KTX container and geometry compression using Draco, on [<ins>the glTF roadmap</ins>][link-id-gltfroadmap] become widely available, smaller assets or more visual fidelity at the same asset size will be possible.
+* Draw calls: should be minimized by consolidating meshes, and using fewer materials.
+* Triangle Count: 100,000 triangles or less.
+* Texture Aspect Ratio: use power of 2 resolutions, square aspect ratio is not required.
+* Texture Size: Use `1024*1024` (1K) or `2048*2048` (2K) for BaseColor, ORM and Emissive maps. 2K is recommended for Normal maps which are more sensitive to reduced resolutions than even Albedo maps. Normals Maps are also severely sensitive to JPG artifacts - a 2K JPG giving the same quality as same as 1K PNG normal map.
 
 [link-id-001]:./detail-version/FileFormatsAndAssetStructure.md
 [link-id-002]:./detail-version/CoordinateSystemandScaleUnit.md
 [link-id-gltfviewer]:https://github.com/KhronosGroup/glTF-Sample-Viewer
-[link-id-draco]:https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_draco_mesh_compression
-[link-id-ktx2]:https://github.com/KhronosGroup/KTX-Software
+[link-id-gltfroadmap]:https://www.khronos.org/assets/uploads/developers/library/2019-siggraph/glTF-01-Khronos-SIGGRAPH-Jul19.pdf

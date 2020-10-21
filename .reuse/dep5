@@ -1,0 +1,18 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: 3DC-Asset-Creation
+Source: https://github.com/KhronosGroup/3DC-Asset-Creation
+
+Files: asset-creation-guidelines/detail-version/figures/*.jpg
+    asset-creation-guidelines/detail-version/figures/*.png
+    asset-creation-guidelines/full-version/*/figures/*.jpg
+    asset-creation-guidelines/full-version/*/figures/*.png
+    asset-creation-guidelines/full-version/*/figures/*.gif
+    asset-creation-guidelines/full-version/*.md
+    sample-assets/*/*.glb
+    sample-assets/*/*.jpg
+Copyright: 2020 The Khronos Group, Inc.
+License: CC-BY-4.0
+
+Files: asset-creation-guidelines/copyright-spec.md
+Copyright: 2014-2020 The Khronos Group, Inc
+License: LicenseRef-KhronosSpecCopyright

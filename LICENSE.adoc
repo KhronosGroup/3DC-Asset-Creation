@@ -1,0 +1,35 @@
+// Copyright 2020 The Khronos Group Inc.
+//
+// SPDX-License-Identifier: CC-BY-4.0
+
+= LICENSE file for the KhronosGroup/assetcreation-models project
+
+Files in this repository fall under one of these licenses:
+
+  * SPDX license identifier: "`Apache-2.0 OR MIT`"
+  ** Apache License 2.0 OR MIT License
+  ** For scripts and XML which need to be usable in GPL-licensed projects.
+
+  * SPDX license identifier: "`Apache-2.0`"
+  ** Apache License 2.0
+  ** For other scripts
+
+  * SPDX license identifier: "`CC-BY-4.0`"
+  ** Creative Commons Attribution 4.0 International
+  ** For specification source documents
+
+  * SPDX license identifier: "`CC0-1.0`"
+  ** Creative Commons CC0 1.0 Universal "`Public Domain Dedication`"
+  ** Used on some contributed sample code
+
+  * SPDX license identifier "`LicenseRef-KhronosSpecCopyright`"
+  ** Khronos Proprietary Specification license
+  ** Used *only* on the file containing the license statement itself
+
+
+Full license text of these licenses is available at:
+
+  * Apache-2.0: https://opensource.org/licenses/Apache-2.0
+  * CC-BY-4.0: https://creativecommons.org/licenses/by/4.0/legalcode
+  * CC0-1.0: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+  * LicenseRef-KhronosSpecCopyright: `LICENSES/LicenseRef-KhronosSpecCopyright.txt`

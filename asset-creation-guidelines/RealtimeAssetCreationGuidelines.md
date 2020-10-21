@@ -9,7 +9,7 @@ SPDX-License-Identifier: CC-BY-4.0
 # Real-time Asset Creation Guidelines
 
 *Version 1.0.0*\
-Last Updated: July 28, 2020
+Last Updated: October 20, 2020
 
 <!-- Start License -->
 
@@ -21,19 +21,46 @@ Copyright 2020 The Khronos® Group Inc.
 
 <!-- End License -->
 
+## Editors and Alumni
+
+Listed in alphabetical order of campany names
+
+**Editors**\
+Brent Scannell, Autodesk\
+Sam De Lara, 3XR\
+Mike Festa, 3XR\
+Max Limper, DGG\
+Nathaniel Hunter, DreamView\
+3D Commerce Asset Creation TSG, Khronos Group\
+Mike Badillo, Samsung\
+Thomas Huang, Target\
+Jagdishwar Jaman Jyothi, Target\
+Eric Chadwick, Wayfair
+
+<br>
+
+**Alumni**\
+Beau Perschall, TurboSquid
+
 ## Content
 
 Real-time Asset Creation Guidelines Summary
 
-* [Executive summary](#executive-summary)
-* [File Formats and Asset Structure Summary](#file-formats-and-asset-structure-summary)
-* [Coordinate Systems and Scale Summary](#coordinate-systems-and-scale-summary)
-* [Geometry Summary](#geometry-summary)
-* [UV Coordinates Summary](#uv-coordinates-summary)
-* [Materials Summary](#materials-summary)
-* [Textures Summary](#textures-summary)
-* [Lighting Summary](#lighting-summary)
-* [Publishing Targets Summary](#publishing-targets-summary)
+- [Real-time Asset Creation Guidelines](#real-time-asset-creation-guidelines)
+  - [Editors and Alumni](#editors-and-alumni)
+  - [Content](#content)
+  - [Asset Creation Guidelines Summary](#asset-creation-guidelines-summary)
+    - [Executive summary](#executive-summary)
+    - [File Formats and Asset Structure Summary](#file-formats-and-asset-structure-summary)
+    - [Coordinate Systems and Scale Summary](#coordinate-systems-and-scale-summary)
+    - [Geometry Summary](#geometry-summary)
+    - [UV Coordinates Summary](#uv-coordinates-summary)
+    - [Materials Summary](#materials-summary)
+    - [Textures Summary](#textures-summary)
+    - [Rendering & Lighting Summary](#rendering--lighting-summary)
+    - [Levels of Detail Summary](#levels-of-detail-summary)
+    - [Publishing Targets Summary](#publishing-targets-summary)
+    - [glTF & USDZ Summary](#gltf--usdz-summary)
 
 
 ## Asset Creation Guidelines Summary
@@ -54,6 +81,7 @@ We've designed the guidelines to be DCC (Digital Content Creation) tool agnostic
 
 * * *
 
+[<ins>Link to detailed version</ins>](./full-version/sec01_FileFormatsAndAssetStructure/FileFormatsAndAssetStructure.md)
 
 When building 3D assets, it is important to export the final product models into widely recognized file formats and to structure data within those files using common conventions. 
 
@@ -74,6 +102,7 @@ To support these differences we recommend using the Publishing Targets workflow.
 
 * * *
 
+[<ins>Link to detailed version</ins>](./full-version/sec02_CoordinateSystemAndScaleUnit/CoordinateSystemAndScaleUnit.md)
 
 DCC 3D asset authoring tools use a variety of internal coordinate systems and measurement units. It is important to understand the differences between modeling coordinates and normal vector coordinates.
 
@@ -85,6 +114,7 @@ DCC 3D asset authoring tools use a variety of internal coordinate systems and me
 
 * * *
 
+[<ins>Link to detailed version</ins>](./full-version/sec03_Geometry/Geometry.md)
 
 It is recommended to design 3D assets with high accuracy geometry, which can be used for high quality product renderings, and later distill that geometry into smaller assets optimized for real-time deployment. To deliver compelling experiences on the web and on mobile devices, delivery-ready assets should be optimized for quick loading using the following techniques:
 
@@ -102,6 +132,8 @@ It is recommended to design 3D assets with high accuracy geometry, which can be 
 
 * * *
 
+[<ins>Link to detailed version</ins>](./full-version/sec04_UVCoordinates/UVCoordinates.md)
+
 An asset optimized for web and mobile experiences should have fully unwrapped UVs for all parts. High quality UVs are required to create convincing real-time assets that faithfully represent real-world products.
 
 * UV layouts can be tiled or atlased, depending on the asset. When surface details must be unique an atlas layout is best. However if surfaces use repetitive patterns then tiling textures are better.
@@ -115,6 +147,7 @@ An asset optimized for web and mobile experiences should have fully unwrapped UV
 
 * * *
 
+[<ins>Link to detailed version</ins>](./full-version/sec05_MaterialsAndTextures/MaterialsAndTextures.md#materials-textures)
 
 Typically textures and materials make up a larger percentage of an asset file size than geometry. Materials optimized for visually realistic real-time rendering should use a physically-based rendering (PBR) workflow. PBR materials help minimize file sizes, enable a wide range of surface types, are easy to use and understand, and use less memory when rendering. Recommended guidelines for real-time-optimized materials include:
 
@@ -127,6 +160,7 @@ Typically textures and materials make up a larger percentage of an asset file si
 ### Textures Summary
 
 * * *
+[<ins>Link to detailed version</ins>](./full-version/sec05_MaterialsAndTextures/MaterialsAndTextures.md#textures-for-pbr-metalness-roughness)
 
 
 Use high quality texture assets when creating the high-resolution Source Asset. We recommend saving the Source textures in PNG format rather than compressed JPG format. Textures can then be down-sampled into PNG or JPG formats and different resolutions to support different publishing targets, which may require differing file sizes and material features.
@@ -150,10 +184,11 @@ Recommended guidelines for real-time textures include:
 * Down-sampled textures for publishing targets should be as small as possible without degrading visual details. Use JPG textures as much as possible for Base Color (without transparency) and Emissive. If JPG artifacts are too extreme, use PNG textures. See Publishing Target Summary section below for format and resolution recommendations. 
 
 
-### Lighting Summary
+### Rendering & Lighting Summary
 
 * * *
 
+[<ins>Link to detailed version</ins>](./full-version/sec06_RenderingAndLighting/RenderingAndLighting.md)
 
 Common types of lighting techniques include:
 * Image-based Lighting (IBL) uses a panoramic environment image, used for both specular reflections (glossy surfaces) and soft diffuse lighting (rough surfaces). IBL textures can be created from panoramic high-dynamic range photography or rendered from a computer graphics scene. The [<ins>Khronos sample glTF viewer</ins>][link-id-gltfviewer] can use IBL.
@@ -165,9 +200,20 @@ Recommended guidelines for real-time-optimized lighting include:
 * Do not use a single ambient color light to light a scene during authoring, as Ambient lights are not physically based.
 * Use a consistent Image Based Lighting setup to test and confirm the accuracy of your models, materials and textures.
 
+
+### Levels of Detail Summary
+    
+* * *
+
+[<ins>Link to detailed version</ins>](./full-version/sec07_LevelsofDetail/LevelsofDetail.md)
+
+
 ### Publishing Targets Summary
     
 * * *
+
+[<ins>Link to detailed version</ins>](./full-version/sec99_PublishingTargets/PublishingTargets.md)
+
 
 We recommend creating a Source Asset with the highest quality content in PBR format, using high-resolution geometry  and textures. This asset can be used as a "single source of truth" which is then decimated/simplified into different targets, to support a variety of viewers, each supporting different material features.
 
@@ -180,7 +226,15 @@ For each publishing target:
 * Texture Aspect Ratio: use power of 2 resolutions, square aspect ratio is not required.
 * Texture Size: Use `1024*1024` (1K) or `2048*2048` (2K) for BaseColor, ORM and Emissive maps. 2K is recommended for Normal maps which are more sensitive to reduced resolutions than even Albedo maps. Normals Maps are also severely sensitive to JPG artifacts - a 2K JPG giving the same quality as same as 1K PNG normal map.
 
-[link-id-001]:./detail-version/FileFormatsAndAssetStructure.md
-[link-id-002]:./detail-version/CoordinateSystemandScaleUnit.md
+
 [link-id-gltfviewer]:https://github.com/KhronosGroup/glTF-Sample-Viewer
 [link-id-gltfroadmap]:https://www.khronos.org/assets/uploads/developers/library/2019-siggraph/glTF-01-Khronos-SIGGRAPH-Jul19.pdf
+
+
+### glTF & USDZ Summary
+
+* * *
+
+[<ins>Link to detailed version</ins>](./full-version/sec100_GltfAndUsdz/GltfAndUsdz.md)
+
+

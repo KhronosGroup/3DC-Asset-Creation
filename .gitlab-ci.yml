@@ -1,0 +1,32 @@
+# Copyright (c) 2018-2020 The Khronos Group Inc.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Gitlab CI file for 3DC spec and header generation
+
+# All stages use the same Docker image, so there are no prerequisites
+image: khronosgroup/docker-images:vulkan-docs-base
+
+# Build the vulkan specification and generate any associated files (such as vulkan.h)
+spec-generate:
+    stage: build
+    before_script:
+        # Nothing, all prerequisites are in the Docker image
+    script:
+        - mkdir -p out
+        - cd asset-creation-guidelines
+        - ./convert-pdf.sh RealtimeAssetCreationGuidelines.md ../out/RealtimeAssetCreationGuidelines.pdf
+    artifacts:
+        when: always
+        paths:
+            - out/
+        expire_in: 1 week
+
+# Verify repository license compliance
+license-check:
+    stage: test
+    before_script:
+        # Nothing, all prerequisites are in the Docker image
+    script:
+        - reuse lint
+    allow_failure: false

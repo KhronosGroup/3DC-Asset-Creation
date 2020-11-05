@@ -4,7 +4,7 @@
 Last Updated: October 20, 2020
 
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
 
 When building 3D assets, it is important to export the final product models into widely recognized file formats and to structure data within those files using common conventions.
 
@@ -148,4 +148,4 @@ Below is an example  of some common industry standard naming prefixes to define 
 
 <br></br>
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)

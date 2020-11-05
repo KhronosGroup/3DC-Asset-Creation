@@ -94,7 +94,7 @@ Create 3D models as if you were building the real product. We do not advise crea
 
 ## Polygonal Count
 
-Models should only have as much geometry as necessary to keep a high level of realism. The more triangles, the more calculations that need to be computed when rendering. Normal map textures should be used to capture small details that may be modeled in a [base asset](https://docs.google.com/document/d/1UfUJpDPDOk35kGxZ_vuJhPPQxXt_gtSBDt99ogEDhFQ/edit#heading=h.q4349om3p379) in order to reduce the triangle count while retaining visual fidelity. 
+Models should only have as much geometry as necessary to keep a high level of realism. The more triangles, the more calculations that need to be computed when rendering. Normal map textures should be used to capture small details that may be modeled in a base asset in order to reduce the triangle count while retaining visual fidelity. 
 
 For further information about specific publishing targets, refer to the [Publishing Targets](https://docs.google.com/document/d/1UfUJpDPDOk35kGxZ_vuJhPPQxXt_gtSBDt99ogEDhFQ/edit#heading=h.fjjg1oxve2by) section of this document. 
 

@@ -3,7 +3,7 @@
 *Version 1.0.0*\
 Last Updated: October 20, 2020
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
 
 
 A geometric mesh is a structural build of a 3D model that is created using a combination of polygons. They help define the size and shape of a model. 
@@ -201,4 +201,4 @@ Ensure that any area of a model that can be seen, even through glass, has thickn
 
 <br></br>
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)

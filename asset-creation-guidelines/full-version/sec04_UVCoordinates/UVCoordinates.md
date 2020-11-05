@@ -4,7 +4,7 @@
 *Version 1.0.0*\
 Last Updated: October 20, 2020
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
 
 
 
@@ -577,4 +577,4 @@ Another exception is for models which need to display variants for interactive c
 KHR_texture_transform is not required to support tiling, you can simply scale the UVs themselves. It is required however if you wish to use Real-World Scale UVs, and tile each bitmap independently in the material.
 
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)

@@ -4,7 +4,7 @@
 Last Updated: October 20, 2020
 
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
 
 # Lighting
 For best results use an IBL and add Emissive if the product has internal lighting.
@@ -116,4 +116,4 @@ Most real-time shaders, materials, and viewers will take care of this for you. H
 
 <br></br>
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)

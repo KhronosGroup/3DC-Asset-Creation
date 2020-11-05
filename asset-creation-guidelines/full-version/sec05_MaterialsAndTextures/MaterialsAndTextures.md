@@ -4,7 +4,7 @@
 Last Updated: October 20, 2020
 
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
 
 Materials are used to add visual details and shading to the flat surfaces of a 3D model. They help define whether the surface looks like wood, fabric, metal, plastic, glass, etc.
 
@@ -643,4 +643,4 @@ See [PBR Next](https://github.com/KhronosGroup/glTF/milestone/2) for more inform
 
 <br></br>
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)

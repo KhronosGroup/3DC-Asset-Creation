@@ -3,7 +3,7 @@
 *Version 1.0.0*\
 Last Updated: October 20, 2020
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
 
 <br>
 
@@ -50,4 +50,4 @@ Link to details on [glTF specification](https://github.com/KhronosGroup/glTF/tre
 
 <br><br>
 
-[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](./asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)
+[<ins>Return to <em>Asset Creation Guidelines Summary</em></ins>](/asset-creation-guidelines/RealtimeAssetCreationGuidelines.md)

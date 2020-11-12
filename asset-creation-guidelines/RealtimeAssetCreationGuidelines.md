@@ -40,6 +40,7 @@ Eric Chadwick, Wayfair
 <br>
 
 **Alumni**\
+Boaz Ashkenazy, Simply Augmented\
 Beau Perschall, TurboSquid
 
 ## Content

@@ -25,6 +25,8 @@ In this document we will walk through the process of optimizing a CAD model and 
 The 3D model is a make-believe handheld game controller for an upcoming next generation AR game system set to ship by 4th quarter 2021. This game system is expected to change the way gamers play their favorite games! As an avid gamer, you are very excited about this new device.  \
 The manufacturing team sent the marketing team a 3D CAD model originally used to 3D print a prototype of an AR game controller.  The marketing team's 2D UX artist working on the product's website does not have much experience working with 3d assets. When the 2D artist added textures and exported this asset as GLTF using Blender, the textured model does not look quite right. When the asset is loaded on a phone, the framerate is low. A producer from the marketing team chose you to fix these rendering issues and optimize this model to run on older mobile phone web browsers.
 
+--- 
+
 ## Import and Reviewing the 3D Asset
 You receive the asset in .OBJ format and import the .OBJ file into one of your favorite 3D content creation software.
 
@@ -117,8 +119,9 @@ You move on to clean up the button geometry and decide to delete the geometry wh
 
 <img src="image_17.png" width="" alt="Markdown Image" style = "margin-right: 25px;" />
 
+---
 
-UV Layout ( Not to be confused with the Headus app )
+## UV Layout ( Not to be confused with the Headus app )
 Workflow hint #2 - Laying out your UV's
 
 Now that you have a 1st pass on optimizing your model, you decide to move on to the object's uv’s.
@@ -144,6 +147,8 @@ https://www.youtube.com/watch?v=qRDgF7ZfaTA
 
 Texels: \
 https://en.wikipedia.org/wiki/Texel_(graphics)  
+
+---
 
 ## Substance Painter
 

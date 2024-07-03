@@ -253,7 +253,7 @@ The color values for Base Color should be within the range of 30 to 243. A value
 
 Most art software uses the 8-bit color range to specify color values, which goes from 0 to 255. However linear color values may be used if working with higher bit depths.
 
-Base Color and Emissive textures should be authored in sRGB color space, which is analogous to 1.22 gamma. These textures are commonly derived from photography, and cameras nearly always apply gamma to their images. All other textures (Alpha Coverage, Metalness, Roughness, Normal, Occlusion) should be authored in Linear color space.
+Base Color and Emissive textures should be authored in sRGB color space, which is analogous to 2.2 gamma. These textures are commonly derived from photography, and cameras nearly always apply gamma to their images. All other textures (Alpha Coverage, Metalness, Roughness, Normal, Occlusion) should be authored in Linear color space.
 
 ### Base Color for Non-Metals (Dielectrics)
 

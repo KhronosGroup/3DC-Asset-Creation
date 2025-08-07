@@ -35,9 +35,9 @@ Listed in alphabetical order of company names
 
 **Version 2.0**\
 Matthew MacFarquhar, Amazon\
+Eric Chadwick, DDG\
 Daniel Frith, London Dynamics\
-Mike Festa, SuperDnaX\
-Eric Chadwick, DDG
+Mike Festa, SuperDnaX
 
 <br>
 
@@ -101,7 +101,9 @@ Eric Chadwick, Wayfair
 
 <strong>Triangles</strong> - glTF stores mesh data as triangles only and unlike authoring formats, does not support quads or ngons.
 
-<strong>Vertex Normals</strong> - Can be edited to control how sharp triangle edges appear and face-weighted normals can be used to improve the look of rounded edges, such as bevels.
+<strong>Vertices</strong> - glTF stores meshes as single-indexed data; vertices are split on export if they contain more than one of each type of mesh data (texture coordinates, normals, materials, etc.).
+
+<strong>Vertex Normals</strong> - Can be edited to control whether triangle edges appear sharp, and face-weighted normals can be used to improve the look of rounded edges such as bevels.
 
 <strong>Mesh Instancing</strong> - Elements within a model that share the same geometry, such as wheels on a car, can reference a single copy of that data, improving performance. There are some considerations to be aware of, such as conflicting baked ambient occlusion values.
 
@@ -113,7 +115,7 @@ Eric Chadwick, Wayfair
 
 <strong>UV vs XYZ</strong> - The UV coordinate system is a 2D location on an image texture that corresponds to a 3D point on the triangles of the model. If a material is using one or more textures, the UV map is used by the rendering engine to know what color pixel to paint on each pixel of the screen.
 
-<strong>Multiple UV Maps</strong> - Some applications support glTF's ability to use more than one UV map, for example a tiled fabric texture and non-repeating ambient occlusion. However, because it is not universally available and missing from USDZ, it is generally <strong>not recommended</strong>.
+<strong>Multiple UV Maps</strong> - Some applications support glTF's ability to use more than one UV map, for example a tiled fabric texture and non-repeating ambient occlusion. However, because it is not universally available and not fully supported by USDZ renderers, it is generally <strong>not recommended</strong>.
 
 <strong>UV Island Margins and MIP Mapping</strong> - UV maps have groups of connected triangles called islands, which share pixels. If two islands are directly touching each other, the pixels at the edge may bleed over from one island to the other, resulting in visual artifacts and seams that do not look correct. This is especially pronounced when the resolution of a texture is automatically reduced with distance. This automatic texture reduction is called MIP Mapping.
 
@@ -137,7 +139,7 @@ Eric Chadwick, Wayfair
 
 <strong>Channel Packing in Textures</strong> - Some PBR textures use channel-packing to store multiple textures into one bitmap file. This helps reduce file sizes, and allows multiple textures to reuse the same space in memory during rendering.
 
-<strong>Emissive or Unlit</strong> - glTF offers an extension which increases the emissive strength beyond 100%, which renderers can then use to enable a glow effect. Unlit disables all lighting calculations for a surface, and uses the color values from the Base Color. Unlit can be useful for user interface graphics or for special effects animations.
+<strong>Emissive or Unlit</strong> - glTF offers an extension which increases the emissive strength beyond 100%, which renderers can then use to enable a glow effect. The Unlit extension disables all lighting calculations for a surface, and uses the color values from the Base Color, which can be useful for user interface graphics or for special effects animations.
 
 <strong>Alpha Transparency</strong> - Alpha can be used to control the visibility of a surface. Two modes are available in glTF: alphaMode:Mask and alphaMode:Blend. Mask creates on/off coverage and is commonly used to simulate geometry such as tree leaves or wire fencing, while Blend offers soft gradations of visibility such as fur or smoke.
 
@@ -251,12 +253,12 @@ This summary is coming soon. Please refer to the [working Google Doc](https://do
 
 [<ins>Link to full version</ins>](./full-version/sec12_FutureDevelopments/FutureDevelopments.md)
 
-<strong>Interactivity</strong> - Khronos is ratifying an extension to enable models to have self-contained behaviors that can make the product more engaging.
+<strong>Interactivity</strong> - Assets can include self-contained behaviors.
 
-<strong>MaterialX</strong> - A node graph for procedural textures.
+<strong>MaterialX</strong> - A node graph for procedural materials and textures.
 
 <strong>Node Visibility</strong> - Turn on and off different parts of the model, especially useful when used with the interactivity extension.
 
-<strong>Subsurface Scattering</strong> - KHR_materials_diffuse_transmission and KHR_materials_subsurface can improve the look of certain materials such as skin or wax.
+<strong>Subsurface Scattering</strong> - Diffuse Transmission and Volumetric Scattering can mimic how light is scattered through materials such as skin or wax.
 
 <strong>Gaussian Splatting</strong> - A way of displaying point clouds with view-dependant properties that stretch and elongate each point. They can provide a photo-realistic representation of a product with features that are traditionally hard to represent with triangles and PBR textures, such as thin features and fur.

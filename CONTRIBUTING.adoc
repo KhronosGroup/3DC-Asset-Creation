@@ -34,10 +34,11 @@ repository.
 
 == Contributor License Agreement
 
-When you propose a pull request to this repository, you must execute the
-Khronos Mixed Repository Contributor License Agreement, to confirm you own
-your work and are granting Khronos the neccessary permissions to
-redistribute it under our licenses.
+When you propose a pull request to this repository, you must execute the Khronos
+link:https://www.khronos.org/cla/KhronosGroup/3DC-Asset-Creation[Open Source
+Contributor License Agreement (CLA)], to confirm you own your work and are
+granting Khronos the neccessary permissions to redistribute it under our
+licenses.
 
 == AI-Assisted Contributions
 
